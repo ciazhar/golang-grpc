@@ -61,6 +61,7 @@ func checkHeader(h http.Handler) http.Handler {
 		if auth := r.Header.Get("Authorization"); auth != "" {
 			if authHeader := strings.Split(auth, " "); len(authHeader) == 2 {
 
+				//get claims
 				claims := jwt.MapClaims{}
 				if _, err := jwt.ParseWithClaims(authHeader[1], claims, func(token *jwt.Token) (interface{}, error) {
 					if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
@@ -71,18 +72,31 @@ func checkHeader(h http.Handler) http.Handler {
 					return
 				}
 
+				//get authorities
 				authorities := make([]interface{}, 0)
 				if claims["authorities"] != nil {
 					authorities = claims["authorities"].([]interface{})
 				}
-				for i := range authorities {
-					fmt.Print(authorities[i])
+
+				//get
+				if strings.HasPrefix(r.URL.String(), "/server") {
+					if exist := contains(authorities, "ROLE_USER"); exist {
+
+					}
 				}
-				fmt.Print(r.URL.String())
 			}
 		}
 		h.ServeHTTP(w, r)
 	})
+}
+
+func contains(s []interface{}, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
 }
 
 func Run(address string, opts ...runtime.ServeMuxOption) error {
