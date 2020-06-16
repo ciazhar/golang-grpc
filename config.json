@@ -1,0 +1,7 @@
+{
+  "name": "GRPC COMMON CONFIG",
+  "profile": "debug",
+  "version": "v6.1.1",
+  "port":"8080",
+  "grpc.address": "0.0.0.0:50051"
+}
