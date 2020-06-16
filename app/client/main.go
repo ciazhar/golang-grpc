@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ciazhar/golang-grpc/api-grpc/api"
+	"github.com/ciazhar/golang-grpc/grpc/generated/go/recipe"
 	"google.golang.org/grpc"
 	"log"
 )
@@ -18,9 +18,9 @@ func main() {
 	}
 	defer cc.Close()
 
-	client := api.NewSocialServiceClient(cc)
-	request := &api.SocialRequest{Id: "Jeremy"}
+	client := recipe.NewRecipesServiceClient(cc)
+	request := &recipe.ListAllRecipesRequest{}
 
-	resp, _ := client.GetByID(context.Background(), request)
+	resp, _ := client.ListAllRecipes(context.Background(), request)
 	fmt.Printf("Receive response => [%v]", resp)
 }
