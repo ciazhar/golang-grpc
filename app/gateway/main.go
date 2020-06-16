@@ -109,6 +109,7 @@ func Run(address string, opts ...runtime.ServeMuxOption) error {
 		return err
 	}
 	mux.Handle("/", gw)
+	mux.Handle("/swagger/", http.StripPrefix("/swagger", http.FileServer(http.Dir("grpc/generated/swagger/grpc/proto"))))
 
 	return http.ListenAndServe(address, checkHeader(allowCORS(mux)))
 
