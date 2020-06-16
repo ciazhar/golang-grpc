@@ -1,7 +1,7 @@
-package social
+package recipe
 
 import (
-	"github.com/ciazhar/golang-grpc/server-grpc/pkg/social/repository/grpc"
+	"github.com/ciazhar/golang-grpc/app/server/pkg/recipe/repository/grpc"
 	grpc2 "google.golang.org/grpc"
 )
 
