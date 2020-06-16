@@ -17,8 +17,6 @@ import (
 
 var (
 	serverEndpoint = flag.String("/server", "localhost:50051", "endpoint of YourService")
-
-	swaggerDir = flag.String("swagger_dir", "template", "path to the directory which contains swagger definitions")
 )
 
 func newGateway(ctx context.Context, opts ...runtime.ServeMuxOption) (http.Handler, error) {
@@ -65,7 +63,7 @@ func checkHeader(h http.Handler) http.Handler {
 				claims := jwt.MapClaims{}
 				if _, err := jwt.ParseWithClaims(authHeader[1], claims, func(token *jwt.Token) (interface{}, error) {
 					if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-						return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
+						return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 					}
 					return []byte("ThisIsSecretForJWTHS512SignatureAlgorithmThatMUSTHave512bitsKeySize"), nil
 				}); err != nil {
