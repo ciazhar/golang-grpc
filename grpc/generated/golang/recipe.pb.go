@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.24.0-devel
 // 	protoc        v3.10.1
-// source: grpc/proto/recipe.proto
+// source: grpc/proto/golang.proto
 
-package recipe
+package golang
 
 import (
 	context "context"
@@ -36,13 +36,13 @@ type AddRecipeRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Recipe *Recipe `protobuf:"bytes,1,opt,name=recipe,proto3" json:"recipe,omitempty"`
+	Recipe *Recipe `protobuf:"bytes,1,opt,name=golang,proto3" json:"golang,omitempty"`
 }
 
 func (x *AddRecipeRequest) Reset() {
 	*x = AddRecipeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[0]
+		mi := &file_grpc_proto_golang_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -55,7 +55,7 @@ func (x *AddRecipeRequest) String() string {
 func (*AddRecipeRequest) ProtoMessage() {}
 
 func (x *AddRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[0]
+	mi := &file_grpc_proto_golang_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -68,7 +68,7 @@ func (x *AddRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRecipeRequest.ProtoReflect.Descriptor instead.
 func (*AddRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{0}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AddRecipeRequest) GetRecipe() *Recipe {
@@ -89,7 +89,7 @@ type AddRecipeResponse struct {
 func (x *AddRecipeResponse) Reset() {
 	*x = AddRecipeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[1]
+		mi := &file_grpc_proto_golang_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -102,7 +102,7 @@ func (x *AddRecipeResponse) String() string {
 func (*AddRecipeResponse) ProtoMessage() {}
 
 func (x *AddRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[1]
+	mi := &file_grpc_proto_golang_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +115,7 @@ func (x *AddRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRecipeResponse.ProtoReflect.Descriptor instead.
 func (*AddRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{1}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AddRecipeResponse) GetSuccess() bool {
@@ -134,7 +134,7 @@ type ListAllRecipesRequest struct {
 func (x *ListAllRecipesRequest) Reset() {
 	*x = ListAllRecipesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[2]
+		mi := &file_grpc_proto_golang_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -147,7 +147,7 @@ func (x *ListAllRecipesRequest) String() string {
 func (*ListAllRecipesRequest) ProtoMessage() {}
 
 func (x *ListAllRecipesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[2]
+	mi := &file_grpc_proto_golang_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -160,7 +160,7 @@ func (x *ListAllRecipesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllRecipesRequest.ProtoReflect.Descriptor instead.
 func (*ListAllRecipesRequest) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{2}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{2}
 }
 
 type ListAllRecipesResponse struct {
@@ -168,13 +168,13 @@ type ListAllRecipesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Recipe *Recipe `protobuf:"bytes,1,opt,name=recipe,proto3" json:"recipe,omitempty"`
+	Recipe *Recipe `protobuf:"bytes,1,opt,name=golang,proto3" json:"golang,omitempty"`
 }
 
 func (x *ListAllRecipesResponse) Reset() {
 	*x = ListAllRecipesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[3]
+		mi := &file_grpc_proto_golang_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -187,7 +187,7 @@ func (x *ListAllRecipesResponse) String() string {
 func (*ListAllRecipesResponse) ProtoMessage() {}
 
 func (x *ListAllRecipesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[3]
+	mi := &file_grpc_proto_golang_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -200,7 +200,7 @@ func (x *ListAllRecipesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllRecipesResponse.ProtoReflect.Descriptor instead.
 func (*ListAllRecipesResponse) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{3}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ListAllRecipesResponse) GetRecipe() *Recipe {
@@ -215,13 +215,13 @@ type ListAllRecipesResponseArray struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Recipe []*Recipe `protobuf:"bytes,1,rep,name=recipe,proto3" json:"recipe,omitempty"`
+	Recipe []*Recipe `protobuf:"bytes,1,rep,name=golang,proto3" json:"golang,omitempty"`
 }
 
 func (x *ListAllRecipesResponseArray) Reset() {
 	*x = ListAllRecipesResponseArray{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[4]
+		mi := &file_grpc_proto_golang_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -234,7 +234,7 @@ func (x *ListAllRecipesResponseArray) String() string {
 func (*ListAllRecipesResponseArray) ProtoMessage() {}
 
 func (x *ListAllRecipesResponseArray) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[4]
+	mi := &file_grpc_proto_golang_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +247,7 @@ func (x *ListAllRecipesResponseArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllRecipesResponseArray.ProtoReflect.Descriptor instead.
 func (*ListAllRecipesResponseArray) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{4}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListAllRecipesResponseArray) GetRecipe() []*Recipe {
@@ -269,7 +269,7 @@ type Recipe struct {
 func (x *Recipe) Reset() {
 	*x = Recipe{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[5]
+		mi := &file_grpc_proto_golang_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -282,7 +282,7 @@ func (x *Recipe) String() string {
 func (*Recipe) ProtoMessage() {}
 
 func (x *Recipe) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[5]
+	mi := &file_grpc_proto_golang_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -295,7 +295,7 @@ func (x *Recipe) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Recipe.ProtoReflect.Descriptor instead.
 func (*Recipe) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{5}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Recipe) GetName() string {
@@ -324,7 +324,7 @@ type Ingredient struct {
 func (x *Ingredient) Reset() {
 	*x = Ingredient{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[6]
+		mi := &file_grpc_proto_golang_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -337,7 +337,7 @@ func (x *Ingredient) String() string {
 func (*Ingredient) ProtoMessage() {}
 
 func (x *Ingredient) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[6]
+	mi := &file_grpc_proto_golang_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -350,7 +350,7 @@ func (x *Ingredient) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Ingredient.ProtoReflect.Descriptor instead.
 func (*Ingredient) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{6}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Ingredient) GetName() string {
@@ -378,7 +378,7 @@ type ListAllIngredientsAtHomeRequest struct {
 func (x *ListAllIngredientsAtHomeRequest) Reset() {
 	*x = ListAllIngredientsAtHomeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[7]
+		mi := &file_grpc_proto_golang_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -391,7 +391,7 @@ func (x *ListAllIngredientsAtHomeRequest) String() string {
 func (*ListAllIngredientsAtHomeRequest) ProtoMessage() {}
 
 func (x *ListAllIngredientsAtHomeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[7]
+	mi := &file_grpc_proto_golang_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +404,7 @@ func (x *ListAllIngredientsAtHomeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllIngredientsAtHomeRequest.ProtoReflect.Descriptor instead.
 func (*ListAllIngredientsAtHomeRequest) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{7}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListAllIngredientsAtHomeRequest) GetIngredient() *Ingredient {
@@ -425,7 +425,7 @@ type ListAllIngredientsAtHomeResponse struct {
 func (x *ListAllIngredientsAtHomeResponse) Reset() {
 	*x = ListAllIngredientsAtHomeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[8]
+		mi := &file_grpc_proto_golang_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *ListAllIngredientsAtHomeResponse) String() string {
 func (*ListAllIngredientsAtHomeResponse) ProtoMessage() {}
 
 func (x *ListAllIngredientsAtHomeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[8]
+	mi := &file_grpc_proto_golang_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +451,7 @@ func (x *ListAllIngredientsAtHomeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAllIngredientsAtHomeResponse.ProtoReflect.Descriptor instead.
 func (*ListAllIngredientsAtHomeResponse) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{8}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListAllIngredientsAtHomeResponse) GetSuccess() bool {
@@ -466,13 +466,13 @@ type GetIngredientsForAllRecipesRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Recipe *Recipe `protobuf:"bytes,1,opt,name=recipe,proto3" json:"recipe,omitempty"`
+	Recipe *Recipe `protobuf:"bytes,1,opt,name=golang,proto3" json:"golang,omitempty"`
 }
 
 func (x *GetIngredientsForAllRecipesRequest) Reset() {
 	*x = GetIngredientsForAllRecipesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[9]
+		mi := &file_grpc_proto_golang_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetIngredientsForAllRecipesRequest) String() string {
 func (*GetIngredientsForAllRecipesRequest) ProtoMessage() {}
 
 func (x *GetIngredientsForAllRecipesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[9]
+	mi := &file_grpc_proto_golang_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetIngredientsForAllRecipesRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetIngredientsForAllRecipesRequest.ProtoReflect.Descriptor instead.
 func (*GetIngredientsForAllRecipesRequest) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{9}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetIngredientsForAllRecipesRequest) GetRecipe() *Recipe {
@@ -519,7 +519,7 @@ type GetIngredientsForAllRecipesResponse struct {
 func (x *GetIngredientsForAllRecipesResponse) Reset() {
 	*x = GetIngredientsForAllRecipesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_proto_recipe_proto_msgTypes[10]
+		mi := &file_grpc_proto_golang_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -532,7 +532,7 @@ func (x *GetIngredientsForAllRecipesResponse) String() string {
 func (*GetIngredientsForAllRecipesResponse) ProtoMessage() {}
 
 func (x *GetIngredientsForAllRecipesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_proto_recipe_proto_msgTypes[10]
+	mi := &file_grpc_proto_golang_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -545,7 +545,7 @@ func (x *GetIngredientsForAllRecipesResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use GetIngredientsForAllRecipesResponse.ProtoReflect.Descriptor instead.
 func (*GetIngredientsForAllRecipesResponse) Descriptor() ([]byte, []int) {
-	return file_grpc_proto_recipe_proto_rawDescGZIP(), []int{10}
+	return file_grpc_proto_golang_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetIngredientsForAllRecipesResponse) GetIngredient() *Ingredient {
@@ -555,9 +555,9 @@ func (x *GetIngredientsForAllRecipesResponse) GetIngredient() *Ingredient {
 	return nil
 }
 
-var File_grpc_proto_recipe_proto protoreflect.FileDescriptor
+var File_grpc_proto_golang_proto protoreflect.FileDescriptor
 
-var file_grpc_proto_recipe_proto_rawDesc = []byte{
+var file_grpc_proto_golang_proto_rawDesc = []byte{
 	0x0a, 0x17, 0x67, 0x72, 0x70, 0x63, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x72, 0x65, 0x63,
 	0x69, 0x70, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e,
@@ -684,26 +684,25 @@ var file_grpc_proto_recipe_proto_rawDesc = []byte{
 	0x70, 0x65, 0x73, 0x2c, 0x20, 0x74, 0x68, 0x69, 0x73, 0x20, 0x41, 0x50, 0x49, 0x20, 0x70, 0x72,
 	0x6f, 0x76, 0x69, 0x64, 0x65, 0x73, 0x20, 0x79, 0x6f, 0x75, 0x20, 0x61, 0x6c, 0x6c, 0x20, 0x74,
 	0x68, 0x65, 0x20, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x20, 0x69, 0x6e, 0x67, 0x72,
-	0x65, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x73, 0x28, 0x01, 0x30, 0x01, 0x42, 0x2b, 0x5a, 0x13, 0x67,
-	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2f, 0x67, 0x6f, 0x2f, 0x72, 0x65, 0x63, 0x69,
-	0x70, 0x65, 0x92, 0x41, 0x13, 0x12, 0x0e, 0x0a, 0x0c, 0x68, 0x6f, 0x6d, 0x65, 0x2d, 0x72, 0x65,
-	0x63, 0x69, 0x70, 0x65, 0x73, 0x2a, 0x01, 0x01, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x73, 0x28, 0x01, 0x30, 0x01, 0x42, 0x12, 0x5a, 0x10, 0x67,
+	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2f, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_grpc_proto_recipe_proto_rawDescOnce sync.Once
-	file_grpc_proto_recipe_proto_rawDescData = file_grpc_proto_recipe_proto_rawDesc
+	file_grpc_proto_golang_proto_rawDescOnce sync.Once
+	file_grpc_proto_golang_proto_rawDescData = file_grpc_proto_golang_proto_rawDesc
 )
 
-func file_grpc_proto_recipe_proto_rawDescGZIP() []byte {
-	file_grpc_proto_recipe_proto_rawDescOnce.Do(func() {
-		file_grpc_proto_recipe_proto_rawDescData = protoimpl.X.CompressGZIP(file_grpc_proto_recipe_proto_rawDescData)
+func file_grpc_proto_golang_proto_rawDescGZIP() []byte {
+	file_grpc_proto_golang_proto_rawDescOnce.Do(func() {
+		file_grpc_proto_golang_proto_rawDescData = protoimpl.X.CompressGZIP(file_grpc_proto_golang_proto_rawDescData)
 	})
-	return file_grpc_proto_recipe_proto_rawDescData
+	return file_grpc_proto_golang_proto_rawDescData
 }
 
-var file_grpc_proto_recipe_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_grpc_proto_recipe_proto_goTypes = []interface{}{
+var file_grpc_proto_golang_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_grpc_proto_golang_proto_goTypes = []interface{}{
 	(*AddRecipeRequest)(nil),                    // 0: proto.AddRecipeRequest
 	(*AddRecipeResponse)(nil),                   // 1: proto.AddRecipeResponse
 	(*ListAllRecipesRequest)(nil),               // 2: proto.ListAllRecipesRequest
@@ -716,12 +715,12 @@ var file_grpc_proto_recipe_proto_goTypes = []interface{}{
 	(*GetIngredientsForAllRecipesRequest)(nil),  // 9: proto.GetIngredientsForAllRecipesRequest
 	(*GetIngredientsForAllRecipesResponse)(nil), // 10: proto.GetIngredientsForAllRecipesResponse
 }
-var file_grpc_proto_recipe_proto_depIdxs = []int32{
-	5,  // 0: proto.AddRecipeRequest.recipe:type_name -> proto.Recipe
-	5,  // 1: proto.ListAllRecipesResponse.recipe:type_name -> proto.Recipe
-	5,  // 2: proto.ListAllRecipesResponseArray.recipe:type_name -> proto.Recipe
+var file_grpc_proto_golang_proto_depIdxs = []int32{
+	5,  // 0: proto.AddRecipeRequest.golang:type_name -> proto.Recipe
+	5,  // 1: proto.ListAllRecipesResponse.golang:type_name -> proto.Recipe
+	5,  // 2: proto.ListAllRecipesResponseArray.golang:type_name -> proto.Recipe
 	6,  // 3: proto.ListAllIngredientsAtHomeRequest.ingredient:type_name -> proto.Ingredient
-	5,  // 4: proto.GetIngredientsForAllRecipesRequest.recipe:type_name -> proto.Recipe
+	5,  // 4: proto.GetIngredientsForAllRecipesRequest.golang:type_name -> proto.Recipe
 	6,  // 5: proto.GetIngredientsForAllRecipesResponse.ingredient:type_name -> proto.Ingredient
 	0,  // 6: proto.RecipesService.AddRecipe:input_type -> proto.AddRecipeRequest
 	2,  // 7: proto.RecipesService.ListAllRecipesArray:input_type -> proto.ListAllRecipesRequest
@@ -740,13 +739,13 @@ var file_grpc_proto_recipe_proto_depIdxs = []int32{
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_grpc_proto_recipe_proto_init() }
-func file_grpc_proto_recipe_proto_init() {
-	if File_grpc_proto_recipe_proto != nil {
+func init() { file_grpc_proto_golang_proto_init() }
+func file_grpc_proto_golang_proto_init() {
+	if File_grpc_proto_golang_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_grpc_proto_recipe_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddRecipeRequest); i {
 			case 0:
 				return &v.state
@@ -758,7 +757,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddRecipeResponse); i {
 			case 0:
 				return &v.state
@@ -770,7 +769,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAllRecipesRequest); i {
 			case 0:
 				return &v.state
@@ -782,7 +781,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAllRecipesResponse); i {
 			case 0:
 				return &v.state
@@ -794,7 +793,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAllRecipesResponseArray); i {
 			case 0:
 				return &v.state
@@ -806,7 +805,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Recipe); i {
 			case 0:
 				return &v.state
@@ -818,7 +817,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Ingredient); i {
 			case 0:
 				return &v.state
@@ -830,7 +829,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAllIngredientsAtHomeRequest); i {
 			case 0:
 				return &v.state
@@ -842,7 +841,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAllIngredientsAtHomeResponse); i {
 			case 0:
 				return &v.state
@@ -854,7 +853,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetIngredientsForAllRecipesRequest); i {
 			case 0:
 				return &v.state
@@ -866,7 +865,7 @@ func file_grpc_proto_recipe_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_proto_recipe_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_grpc_proto_golang_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetIngredientsForAllRecipesResponse); i {
 			case 0:
 				return &v.state
@@ -883,20 +882,20 @@ func file_grpc_proto_recipe_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_grpc_proto_recipe_proto_rawDesc,
+			RawDescriptor: file_grpc_proto_golang_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_grpc_proto_recipe_proto_goTypes,
-		DependencyIndexes: file_grpc_proto_recipe_proto_depIdxs,
-		MessageInfos:      file_grpc_proto_recipe_proto_msgTypes,
+		GoTypes:           file_grpc_proto_golang_proto_goTypes,
+		DependencyIndexes: file_grpc_proto_golang_proto_depIdxs,
+		MessageInfos:      file_grpc_proto_golang_proto_msgTypes,
 	}.Build()
-	File_grpc_proto_recipe_proto = out.File
-	file_grpc_proto_recipe_proto_rawDesc = nil
-	file_grpc_proto_recipe_proto_goTypes = nil
-	file_grpc_proto_recipe_proto_depIdxs = nil
+	File_grpc_proto_golang_proto = out.File
+	file_grpc_proto_golang_proto_rawDesc = nil
+	file_grpc_proto_golang_proto_goTypes = nil
+	file_grpc_proto_golang_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -923,15 +922,15 @@ type RecipesServiceClient interface {
 	GetIngredientsForAllRecipes(ctx context.Context, opts ...grpc.CallOption) (RecipesService_GetIngredientsForAllRecipesClient, error)
 }
 
-type recipesServiceClient struct {
+type golangsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
 func NewRecipesServiceClient(cc grpc.ClientConnInterface) RecipesServiceClient {
-	return &recipesServiceClient{cc}
+	return &golangsServiceClient{cc}
 }
 
-func (c *recipesServiceClient) AddRecipe(ctx context.Context, in *AddRecipeRequest, opts ...grpc.CallOption) (*AddRecipeResponse, error) {
+func (c *golangsServiceClient) AddRecipe(ctx context.Context, in *AddRecipeRequest, opts ...grpc.CallOption) (*AddRecipeResponse, error) {
 	out := new(AddRecipeResponse)
 	err := c.cc.Invoke(ctx, "/proto.RecipesService/AddRecipe", in, out, opts...)
 	if err != nil {
@@ -940,12 +939,12 @@ func (c *recipesServiceClient) AddRecipe(ctx context.Context, in *AddRecipeReque
 	return out, nil
 }
 
-func (c *recipesServiceClient) ListAllRecipesArray(ctx context.Context, in *ListAllRecipesRequest, opts ...grpc.CallOption) (RecipesService_ListAllRecipesArrayClient, error) {
+func (c *golangsServiceClient) ListAllRecipesArray(ctx context.Context, in *ListAllRecipesRequest, opts ...grpc.CallOption) (RecipesService_ListAllRecipesArrayClient, error) {
 	stream, err := c.cc.NewStream(ctx, &_RecipesService_serviceDesc.Streams[0], "/proto.RecipesService/ListAllRecipesArray", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &recipesServiceListAllRecipesArrayClient{stream}
+	x := &golangsServiceListAllRecipesArrayClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -960,11 +959,11 @@ type RecipesService_ListAllRecipesArrayClient interface {
 	grpc.ClientStream
 }
 
-type recipesServiceListAllRecipesArrayClient struct {
+type golangsServiceListAllRecipesArrayClient struct {
 	grpc.ClientStream
 }
 
-func (x *recipesServiceListAllRecipesArrayClient) Recv() (*ListAllRecipesResponseArray, error) {
+func (x *golangsServiceListAllRecipesArrayClient) Recv() (*ListAllRecipesResponseArray, error) {
 	m := new(ListAllRecipesResponseArray)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -972,12 +971,12 @@ func (x *recipesServiceListAllRecipesArrayClient) Recv() (*ListAllRecipesRespons
 	return m, nil
 }
 
-func (c *recipesServiceClient) ListAllRecipes(ctx context.Context, in *ListAllRecipesRequest, opts ...grpc.CallOption) (RecipesService_ListAllRecipesClient, error) {
+func (c *golangsServiceClient) ListAllRecipes(ctx context.Context, in *ListAllRecipesRequest, opts ...grpc.CallOption) (RecipesService_ListAllRecipesClient, error) {
 	stream, err := c.cc.NewStream(ctx, &_RecipesService_serviceDesc.Streams[1], "/proto.RecipesService/ListAllRecipes", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &recipesServiceListAllRecipesClient{stream}
+	x := &golangsServiceListAllRecipesClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -992,11 +991,11 @@ type RecipesService_ListAllRecipesClient interface {
 	grpc.ClientStream
 }
 
-type recipesServiceListAllRecipesClient struct {
+type golangsServiceListAllRecipesClient struct {
 	grpc.ClientStream
 }
 
-func (x *recipesServiceListAllRecipesClient) Recv() (*ListAllRecipesResponse, error) {
+func (x *golangsServiceListAllRecipesClient) Recv() (*ListAllRecipesResponse, error) {
 	m := new(ListAllRecipesResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -1004,12 +1003,12 @@ func (x *recipesServiceListAllRecipesClient) Recv() (*ListAllRecipesResponse, er
 	return m, nil
 }
 
-func (c *recipesServiceClient) ListAllIngredientsAtHome(ctx context.Context, opts ...grpc.CallOption) (RecipesService_ListAllIngredientsAtHomeClient, error) {
+func (c *golangsServiceClient) ListAllIngredientsAtHome(ctx context.Context, opts ...grpc.CallOption) (RecipesService_ListAllIngredientsAtHomeClient, error) {
 	stream, err := c.cc.NewStream(ctx, &_RecipesService_serviceDesc.Streams[2], "/proto.RecipesService/ListAllIngredientsAtHome", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &recipesServiceListAllIngredientsAtHomeClient{stream}
+	x := &golangsServiceListAllIngredientsAtHomeClient{stream}
 	return x, nil
 }
 
@@ -1019,15 +1018,15 @@ type RecipesService_ListAllIngredientsAtHomeClient interface {
 	grpc.ClientStream
 }
 
-type recipesServiceListAllIngredientsAtHomeClient struct {
+type golangsServiceListAllIngredientsAtHomeClient struct {
 	grpc.ClientStream
 }
 
-func (x *recipesServiceListAllIngredientsAtHomeClient) Send(m *ListAllIngredientsAtHomeRequest) error {
+func (x *golangsServiceListAllIngredientsAtHomeClient) Send(m *ListAllIngredientsAtHomeRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *recipesServiceListAllIngredientsAtHomeClient) CloseAndRecv() (*ListAllIngredientsAtHomeResponse, error) {
+func (x *golangsServiceListAllIngredientsAtHomeClient) CloseAndRecv() (*ListAllIngredientsAtHomeResponse, error) {
 	if err := x.ClientStream.CloseSend(); err != nil {
 		return nil, err
 	}
@@ -1038,12 +1037,12 @@ func (x *recipesServiceListAllIngredientsAtHomeClient) CloseAndRecv() (*ListAllI
 	return m, nil
 }
 
-func (c *recipesServiceClient) GetIngredientsForAllRecipes(ctx context.Context, opts ...grpc.CallOption) (RecipesService_GetIngredientsForAllRecipesClient, error) {
+func (c *golangsServiceClient) GetIngredientsForAllRecipes(ctx context.Context, opts ...grpc.CallOption) (RecipesService_GetIngredientsForAllRecipesClient, error) {
 	stream, err := c.cc.NewStream(ctx, &_RecipesService_serviceDesc.Streams[3], "/proto.RecipesService/GetIngredientsForAllRecipes", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &recipesServiceGetIngredientsForAllRecipesClient{stream}
+	x := &golangsServiceGetIngredientsForAllRecipesClient{stream}
 	return x, nil
 }
 
@@ -1053,15 +1052,15 @@ type RecipesService_GetIngredientsForAllRecipesClient interface {
 	grpc.ClientStream
 }
 
-type recipesServiceGetIngredientsForAllRecipesClient struct {
+type golangsServiceGetIngredientsForAllRecipesClient struct {
 	grpc.ClientStream
 }
 
-func (x *recipesServiceGetIngredientsForAllRecipesClient) Send(m *GetIngredientsForAllRecipesRequest) error {
+func (x *golangsServiceGetIngredientsForAllRecipesClient) Send(m *GetIngredientsForAllRecipesRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *recipesServiceGetIngredientsForAllRecipesClient) Recv() (*GetIngredientsForAllRecipesResponse, error) {
+func (x *golangsServiceGetIngredientsForAllRecipesClient) Recv() (*GetIngredientsForAllRecipesResponse, error) {
 	m := new(GetIngredientsForAllRecipesResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -1130,7 +1129,7 @@ func _RecipesService_ListAllRecipesArray_Handler(srv interface{}, stream grpc.Se
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(RecipesServiceServer).ListAllRecipesArray(m, &recipesServiceListAllRecipesArrayServer{stream})
+	return srv.(RecipesServiceServer).ListAllRecipesArray(m, &golangsServiceListAllRecipesArrayServer{stream})
 }
 
 type RecipesService_ListAllRecipesArrayServer interface {
@@ -1138,11 +1137,11 @@ type RecipesService_ListAllRecipesArrayServer interface {
 	grpc.ServerStream
 }
 
-type recipesServiceListAllRecipesArrayServer struct {
+type golangsServiceListAllRecipesArrayServer struct {
 	grpc.ServerStream
 }
 
-func (x *recipesServiceListAllRecipesArrayServer) Send(m *ListAllRecipesResponseArray) error {
+func (x *golangsServiceListAllRecipesArrayServer) Send(m *ListAllRecipesResponseArray) error {
 	return x.ServerStream.SendMsg(m)
 }
 
@@ -1151,7 +1150,7 @@ func _RecipesService_ListAllRecipes_Handler(srv interface{}, stream grpc.ServerS
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(RecipesServiceServer).ListAllRecipes(m, &recipesServiceListAllRecipesServer{stream})
+	return srv.(RecipesServiceServer).ListAllRecipes(m, &golangsServiceListAllRecipesServer{stream})
 }
 
 type RecipesService_ListAllRecipesServer interface {
@@ -1159,16 +1158,16 @@ type RecipesService_ListAllRecipesServer interface {
 	grpc.ServerStream
 }
 
-type recipesServiceListAllRecipesServer struct {
+type golangsServiceListAllRecipesServer struct {
 	grpc.ServerStream
 }
 
-func (x *recipesServiceListAllRecipesServer) Send(m *ListAllRecipesResponse) error {
+func (x *golangsServiceListAllRecipesServer) Send(m *ListAllRecipesResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
 func _RecipesService_ListAllIngredientsAtHome_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RecipesServiceServer).ListAllIngredientsAtHome(&recipesServiceListAllIngredientsAtHomeServer{stream})
+	return srv.(RecipesServiceServer).ListAllIngredientsAtHome(&golangsServiceListAllIngredientsAtHomeServer{stream})
 }
 
 type RecipesService_ListAllIngredientsAtHomeServer interface {
@@ -1177,15 +1176,15 @@ type RecipesService_ListAllIngredientsAtHomeServer interface {
 	grpc.ServerStream
 }
 
-type recipesServiceListAllIngredientsAtHomeServer struct {
+type golangsServiceListAllIngredientsAtHomeServer struct {
 	grpc.ServerStream
 }
 
-func (x *recipesServiceListAllIngredientsAtHomeServer) SendAndClose(m *ListAllIngredientsAtHomeResponse) error {
+func (x *golangsServiceListAllIngredientsAtHomeServer) SendAndClose(m *ListAllIngredientsAtHomeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *recipesServiceListAllIngredientsAtHomeServer) Recv() (*ListAllIngredientsAtHomeRequest, error) {
+func (x *golangsServiceListAllIngredientsAtHomeServer) Recv() (*ListAllIngredientsAtHomeRequest, error) {
 	m := new(ListAllIngredientsAtHomeRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -1194,7 +1193,7 @@ func (x *recipesServiceListAllIngredientsAtHomeServer) Recv() (*ListAllIngredien
 }
 
 func _RecipesService_GetIngredientsForAllRecipes_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RecipesServiceServer).GetIngredientsForAllRecipes(&recipesServiceGetIngredientsForAllRecipesServer{stream})
+	return srv.(RecipesServiceServer).GetIngredientsForAllRecipes(&golangsServiceGetIngredientsForAllRecipesServer{stream})
 }
 
 type RecipesService_GetIngredientsForAllRecipesServer interface {
@@ -1203,15 +1202,15 @@ type RecipesService_GetIngredientsForAllRecipesServer interface {
 	grpc.ServerStream
 }
 
-type recipesServiceGetIngredientsForAllRecipesServer struct {
+type golangsServiceGetIngredientsForAllRecipesServer struct {
 	grpc.ServerStream
 }
 
-func (x *recipesServiceGetIngredientsForAllRecipesServer) Send(m *GetIngredientsForAllRecipesResponse) error {
+func (x *golangsServiceGetIngredientsForAllRecipesServer) Send(m *GetIngredientsForAllRecipesResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *recipesServiceGetIngredientsForAllRecipesServer) Recv() (*GetIngredientsForAllRecipesRequest, error) {
+func (x *golangsServiceGetIngredientsForAllRecipesServer) Recv() (*GetIngredientsForAllRecipesRequest, error) {
 	m := new(GetIngredientsForAllRecipesRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -1251,5 +1250,5 @@ var _RecipesService_serviceDesc = grpc.ServiceDesc{
 			ClientStreams: true,
 		},
 	},
-	Metadata: "grpc/proto/recipe.proto",
+	Metadata: "grpc/proto/golang.proto",
 }

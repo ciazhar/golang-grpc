@@ -5,17 +5,10 @@ package proto;
 import "google/api/annotations.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
-option go_package = "generated/go/recipe";
-
-option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
-  info: {
-    title: "home-recipes";
-  };
-  schemes: HTTP;
-};
+option go_package = "generated/golang";
 
 message AddRecipeRequest {
-  Recipe recipe = 1;
+  Recipe golang = 1;
 }
 
 message AddRecipeResponse {
@@ -25,11 +18,11 @@ message AddRecipeResponse {
 message ListAllRecipesRequest {}
 
 message ListAllRecipesResponse {
-  Recipe recipe = 1;
+  Recipe golang = 1;
 }
 
 message ListAllRecipesResponseArray {
-  repeated Recipe recipe = 1;
+  repeated Recipe golang = 1;
 }
 
 message Recipe {
@@ -51,7 +44,7 @@ message ListAllIngredientsAtHomeResponse {
 }
 
 message GetIngredientsForAllRecipesRequest {
-  Recipe recipe = 1;
+  Recipe golang = 1;
 }
 
 message GetIngredientsForAllRecipesResponse {
@@ -62,13 +55,13 @@ service RecipesService {
   // unary
   rpc AddRecipe (AddRecipeRequest) returns (AddRecipeResponse) {
     option (google.api.http) = {
-      post: "/v1/homerecipes/addRecipe"
+      post: "/v1/homegolangs/addRecipe"
       body: "*"
     };
 
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      summary: "Add a recipe"
-      description: "Add a reciper to the server."
+      summary: "Add a golang"
+      description: "Add a golangr to the server."
       tags: "Recipes"
     };
   }
@@ -76,12 +69,12 @@ service RecipesService {
   // server-streaming array
   rpc ListAllRecipesArray (ListAllRecipesRequest) returns (stream ListAllRecipesResponseArray) {
     option (google.api.http) = {
-      get: "/v1/homerecipes/list"
+      get: "/v1/homegolangs/list"
     };
 
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      summary: "List all recipes Non Stream"
-      description: "Get a list of all recipes available from the server"
+      summary: "List all golangs Non Stream"
+      description: "Get a list of all golangs available from the server"
       tags: "Recipes"
     };
   }
@@ -89,12 +82,12 @@ service RecipesService {
   // server-streaming
   rpc ListAllRecipes (ListAllRecipesRequest) returns (stream ListAllRecipesResponse) {
     option (google.api.http) = {
-      get: "/v1/homerecipes/allRecipes/list"
+      get: "/v1/homegolangs/allRecipes/list"
     };
 
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      summary: "List all recipes"
-      description: "Get a list of all recipes available from the server"
+      summary: "List all golangs"
+      description: "Get a list of all golangs available from the server"
       tags: "Recipes"
     };
   }
@@ -102,7 +95,7 @@ service RecipesService {
   // client-streaming
   rpc ListAllIngredientsAtHome (stream ListAllIngredientsAtHomeRequest) returns (ListAllIngredientsAtHomeResponse) {
     option (google.api.http) = {
-      post: "/v1/homerecipes/allIngredients/post"
+      post: "/v1/homegolangs/allIngredients/post"
       body: "*"
     };
 
@@ -116,13 +109,13 @@ service RecipesService {
   // Bidirectional-streaming
   rpc GetIngredientsForAllRecipes (stream GetIngredientsForAllRecipesRequest) returns (stream GetIngredientsForAllRecipesResponse) {
     option (google.api.http) = {
-      post: "/v1/homerecipes/getIngredients/all"
+      post: "/v1/homegolangs/getIngredients/all"
       body: "*"
     };
 
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      summary: "Get required ingredients for a list of recipes"
-      description: "To help you cook the best recipes, this API provides you all the required ingredients"
+      summary: "Get required ingredients for a list of golangs"
+      description: "To help you cook the best golangs, this API provides you all the required ingredients"
       tags: "Ingredients"
     };
   }
