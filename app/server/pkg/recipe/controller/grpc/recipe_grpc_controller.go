@@ -2,16 +2,17 @@ package grpc
 
 import (
 	"context"
+	repository2 "github.com/ciazhar/golang-grpc/app/server/pkg/recipe/repository"
 	"github.com/ciazhar/golang-grpc/grpc/generated/golang"
 	"google.golang.org/grpc"
 	"io"
 	"log"
 )
 
-type repository struct {
+type recipeController struct {
 }
 
-func (r repository) AddRecipe(ctx context.Context, request *golang.AddRecipeRequest) (*golang.AddRecipeResponse, error) {
+func (r recipeController) AddRecipe(ctx context.Context, request *golang.AddRecipeRequest) (*golang.AddRecipeResponse, error) {
 	log.Printf("Adding new golang\t\tName: %v, Cuisine: %v", request.GetRecipe().GetName(), request.GetRecipe().GetCuisine())
 
 	response := &golang.AddRecipeResponse{Success: true}
@@ -19,14 +20,14 @@ func (r repository) AddRecipe(ctx context.Context, request *golang.AddRecipeRequ
 	return response, nil
 }
 
-func (r repository) ListAllRecipesArray(request *golang.ListAllRecipesRequest, server golang.RecipesService_ListAllRecipesArrayServer) error {
-	return server.Send(&golang.ListAllRecipesResponseArray{Recipe: Recipes})
+func (r recipeController) ListAllRecipesArray(request *golang.ListAllRecipesRequest, server golang.RecipesService_ListAllRecipesArrayServer) error {
+	return server.Send(&golang.ListAllRecipesResponseArray{Recipe: repository2.Recipes})
 }
 
-func (r repository) ListAllRecipes(request *golang.ListAllRecipesRequest, server golang.RecipesService_ListAllRecipesServer) error {
+func (r recipeController) ListAllRecipes(request *golang.ListAllRecipesRequest, server golang.RecipesService_ListAllRecipesServer) error {
 	log.Printf("Listing all available golangs")
 
-	for _, r := range Recipes {
+	for _, r := range repository2.Recipes {
 		err := server.Send(&golang.ListAllRecipesResponse{Recipe: r})
 
 		if err != nil {
@@ -37,7 +38,7 @@ func (r repository) ListAllRecipes(request *golang.ListAllRecipesRequest, server
 	return nil
 }
 
-func (r repository) ListAllIngredientsAtHome(server golang.RecipesService_ListAllIngredientsAtHomeServer) error {
+func (r recipeController) ListAllIngredientsAtHome(server golang.RecipesService_ListAllIngredientsAtHomeServer) error {
 	log.Printf("Noting all the ingredients that you have at home:")
 
 	for {
@@ -53,7 +54,7 @@ func (r repository) ListAllIngredientsAtHome(server golang.RecipesService_ListAl
 	}
 }
 
-func (r repository) GetIngredientsForAllRecipes(server golang.RecipesService_GetIngredientsForAllRecipesServer) error {
+func (r recipeController) GetIngredientsForAllRecipes(server golang.RecipesService_GetIngredientsForAllRecipesServer) error {
 	log.Printf("For all golangs sent, I will reply back with a list of ingredients")
 
 	for {
@@ -67,7 +68,7 @@ func (r repository) GetIngredientsForAllRecipes(server golang.RecipesService_Get
 
 		log.Printf("You have requested ingredients for %v", r.GetRecipe().GetName())
 
-		RecipeToIngredients := RecipeToIngredientsMap()
+		RecipeToIngredients := repository2.RecipeToIngredientsMap()
 		ingredients := RecipeToIngredients[r.GetRecipe().GetName()]
 		for _, item := range ingredients {
 			server.Send(&golang.GetIngredientsForAllRecipesResponse{Ingredient: &item})
@@ -77,6 +78,6 @@ func (r repository) GetIngredientsForAllRecipes(server golang.RecipesService_Get
 	return nil
 }
 
-func NewSocialGRPCRepository(server *grpc.Server) {
-	golang.RegisterRecipesServiceServer(server, &repository{})
+func NewSocialGRPCController(server *grpc.Server) {
+	golang.RegisterRecipesServiceServer(server, &recipeController{})
 }

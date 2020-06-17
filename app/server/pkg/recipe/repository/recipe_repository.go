@@ -1,4 +1,4 @@
-package grpc
+package repository
 
 import "github.com/ciazhar/golang-grpc/grpc/generated/golang"
 
