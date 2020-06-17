@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/api/annotations.proto";
+import "google/protobuf/field_mask.proto";
+
+option go_package = "generated/golang";
+
+message User {
+  // Output only.
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string password = 4;
+  string address = 5;
+  google.protobuf.FieldMask update_mask = 6; // This field will be automatically populated by grpc-gateway.
+}
+
+service UserService {
+  rpc UpdateService (User) returns (User) {
+    // Update maps to HTTP Patch.
+    option (google.api.http) = {
+      put: "/v1/user"
+      body: "*"
+      additional_bindings {
+        patch: "/v1/user"
+        body: "*"
+      }
+    };
+  };
+}

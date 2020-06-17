@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package proto;
+
+import "protoc-gen-swagger/options/annotations.proto";
+
+option go_package = "generated/golang";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+  info: {
+    title: "GRPC Service"
+    version: "1.0"
+  };
+};
