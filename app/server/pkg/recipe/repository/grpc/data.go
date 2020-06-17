@@ -1,9 +1,9 @@
 package grpc
 
-import "github.com/ciazhar/golang-grpc/grpc/generated/go/recipe"
+import "github.com/ciazhar/golang-grpc/grpc/generated/golang"
 
 // Recipes - Mock data of all the recipes to return for ListAllRecipes endpoint
-var Recipes = []*recipe.Recipe{
+var Recipes = []*golang.Recipe{
 	{
 		Name:    "Pizza",
 		Cuisine: "Italian",
@@ -70,22 +70,22 @@ var Recipes = []*recipe.Recipe{
 	},
 }
 
-// RecipeToIngredientsMap - mock data for mapping recipes to ingredients for GetIngredientsForAllRecipes endpoint
-func RecipeToIngredientsMap() map[string][]recipe.Ingredient {
-	recipeToIngredientsMap := make(map[string][]recipe.Ingredient)
-	recipeToIngredientsMap["Bread"] = []recipe.Ingredient{
-		{Name: "recipe:Bread", Quantity: ""},
+// RecipeToIngredientsMap - mock data for mapping golangs to ingredients for GetIngredientsForAllRecipes endpoint
+func RecipeToIngredientsMap() map[string][]golang.Ingredient {
+	golangToIngredientsMap := make(map[string][]golang.Ingredient)
+	golangToIngredientsMap["Bread"] = []golang.Ingredient{
+		{Name: "golang:Bread", Quantity: ""},
 		{Name: "Flour", Quantity: "10kg"},
 		{Name: "Yeast", Quantity: "1 packet"},
 	}
-	recipeToIngredientsMap["Nachos"] = []recipe.Ingredient{
-		{Name: "recipe:Nachos", Quantity: ""},
+	golangToIngredientsMap["Nachos"] = []golang.Ingredient{
+		{Name: "golang:Nachos", Quantity: ""},
 		{Name: "Tortilla chips", Quantity: "1 packett"},
 		{Name: "Sour cream", Quantity: "1 packet"},
 		{Name: "Cheese", Quantity: "200 gms"},
 	}
-	recipeToIngredientsMap["Croissants"] = []recipe.Ingredient{
-		{Name: "recipe:Croissants", Quantity: ""},
+	golangToIngredientsMap["Croissants"] = []golang.Ingredient{
+		{Name: "golang:Croissants", Quantity: ""},
 		{Name: "500g strong white flour, plus extra for dusting", Quantity: ""},
 		{Name: "1½ tsp salt", Quantity: ""},
 		{Name: "50g sugar", Quantity: ""},
@@ -94,8 +94,8 @@ func RecipeToIngredientsMap() map[string][]recipe.Ingredient {
 		{Name: "300g butter, at room temperature", Quantity: ""},
 		{Name: "1 egg, beaten", Quantity: ""},
 	}
-	recipeToIngredientsMap["Chicken pasta bake"] = []recipe.Ingredient{
-		{Name: "recipe:Chicken pasta bake", Quantity: ""},
+	golangToIngredientsMap["Chicken pasta bake"] = []golang.Ingredient{
+		{Name: "golang:Chicken pasta bake", Quantity: ""},
 		{Name: "4 tbsp olive oil", Quantity: ""},
 		{Name: "1 onion, finely chopped", Quantity: ""},
 		{Name: "2 garlic cloves, crushed", Quantity: ""},
@@ -109,8 +109,8 @@ func RecipeToIngredientsMap() map[string][]recipe.Ingredient {
 		{Name: "50g grated mozzarella", Quantity: ""},
 		{Name: "½ small bunch of parsley, finely chopped", Quantity: ""},
 	}
-	recipeToIngredientsMap["Roast salmon with preserved lemon"] = []recipe.Ingredient{
-		{Name: "recipe:Roast salmon with preserved lemon", Quantity: ""},
+	golangToIngredientsMap["Roast salmon with preserved lemon"] = []golang.Ingredient{
+		{Name: "golang:Roast salmon with preserved lemon", Quantity: ""},
 		{Name: "40g preserved lemon, flesh and pith removed", Quantity: ""},
 		{Name: "100ml gin", Quantity: ""},
 		{Name: "1kg side organic farmed or wild salmon (tail end)", Quantity: ""},
@@ -123,5 +123,5 @@ func RecipeToIngredientsMap() map[string][]recipe.Ingredient {
 		{Name: "4 tbsp olive oil", Quantity: ""},
 	}
 
-	return recipeToIngredientsMap
+	return golangToIngredientsMap
 }

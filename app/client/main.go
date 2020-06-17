@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ciazhar/golang-grpc/grpc/generated/go/recipe"
+	"github.com/ciazhar/golang-grpc/grpc/generated/golang"
 	"google.golang.org/grpc"
 	"log"
 )
@@ -18,8 +18,8 @@ func main() {
 	}
 	defer cc.Close()
 
-	client := recipe.NewRecipesServiceClient(cc)
-	request := &recipe.ListAllRecipesRequest{}
+	client := golang.NewRecipesServiceClient(cc)
+	request := &golang.ListAllRecipesRequest{}
 
 	resp, _ := client.ListAllRecipes(context.Background(), request)
 	fmt.Printf("Receive response => [%v]", resp)

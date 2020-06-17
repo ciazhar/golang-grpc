@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/ciazhar/golang-grpc/grpc/generated/go/recipe"
+	"github.com/ciazhar/golang-grpc/grpc/generated/golang"
 	"net/http"
 	"strings"
 
@@ -22,7 +22,7 @@ var (
 func newGateway(ctx context.Context, opts ...runtime.ServeMuxOption) (http.Handler, error) {
 	mux := runtime.NewServeMux(opts...)
 	dialOpts := []grpc.DialOption{grpc.WithInsecure()}
-	err := recipe.RegisterRecipesServiceHandlerFromEndpoint(ctx, mux, *serverEndpoint, dialOpts)
+	err := golang.RegisterRecipesServiceHandlerFromEndpoint(ctx, mux, *serverEndpoint, dialOpts)
 	if err != nil {
 		return nil, err
 	}
