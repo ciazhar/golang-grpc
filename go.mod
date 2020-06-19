@@ -3,7 +3,7 @@ module github.com/ciazhar/golang-grpc
 go 1.12
 
 require (
-	github.com/BurntSushi/toml v0.3.1 // indirect
+	bou.ke/monkey v1.0.2
 	github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.6.3
@@ -11,10 +11,10 @@ require (
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.4.2
 	github.com/grpc-ecosystem/grpc-gateway v1.14.6
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
+	github.com/imdario/mergo v0.3.9
 	github.com/olivere/elastic/v7 v7.0.17
 	github.com/rs/zerolog v1.19.0
+	github.com/satori/go.uuid v1.2.0
 	github.com/streadway/amqp v0.0.0-20200108173154-1c71cc93ed71
 	github.com/stretchr/testify v1.6.1
 	golang.org/x/net v0.0.0-20200222033325-078779b8f2d8
