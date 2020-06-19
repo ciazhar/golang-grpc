@@ -11,10 +11,10 @@
     "application/json"
   ],
   "paths": {
-    "/v1/homegolangs/addRecipe": {
+    "/v1/homerecipes/addRecipe": {
       "post": {
-        "summary": "Add a golang",
-        "description": "Add a golangr to the server.",
+        "summary": "Add a recipe",
+        "description": "Add a reciper to the server.",
         "operationId": "RecipesService_AddRecipe",
         "responses": {
           "200": {
@@ -45,7 +45,7 @@
         ]
       }
     },
-    "/v1/homegolangs/allIngredients/post": {
+    "/v1/homerecipes/allIngredients/post": {
       "post": {
         "summary": "Post all ingredients",
         "description": "Post a list of all the ingrredients that are available in the kitchen from client to the server",
@@ -80,10 +80,10 @@
         ]
       }
     },
-    "/v1/homegolangs/allRecipes/list": {
+    "/v1/homerecipes/allRecipes/list": {
       "get": {
-        "summary": "List all golangs",
-        "description": "Get a list of all golangs available from the server",
+        "summary": "List all recipes",
+        "description": "Get a list of all recipes available from the server",
         "operationId": "RecipesService_ListAllRecipes",
         "responses": {
           "200": {
@@ -113,10 +113,10 @@
         ]
       }
     },
-    "/v1/homegolangs/getIngredients/all": {
+    "/v1/homerecipes/getIngredients/all": {
       "post": {
-        "summary": "Get required ingredients for a list of golangs",
-        "description": "To help you cook the best golangs, this API provides you all the required ingredients",
+        "summary": "Get required ingredients for a list of recipes",
+        "description": "To help you cook the best recipes, this API provides you all the required ingredients",
         "operationId": "RecipesService_GetIngredientsForAllRecipes",
         "responses": {
           "200": {
@@ -157,10 +157,10 @@
         ]
       }
     },
-    "/v1/homegolangs/list": {
+    "/v1/homerecipes/list": {
       "get": {
-        "summary": "List all golangs Non Stream",
-        "description": "Get a list of all golangs available from the server",
+        "summary": "List all recipes Non Stream",
+        "description": "Get a list of all recipes available from the server",
         "operationId": "RecipesService_ListAllRecipesArray",
         "responses": {
           "200": {
@@ -191,6 +191,65 @@
       }
     },
     "/v1/user": {
+      "get": {
+        "operationId": "UserService_ListAllUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/protoListAllUserResponse"
+                },
+                "error": {
+                  "$ref": "#/definitions/runtimeStreamError"
+                }
+              },
+              "title": "Stream result of protoListAllUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "UserService"
+        ]
+      },
+      "post": {
+        "operationId": "UserService_AddRecipe",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoUser"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoUser"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      },
       "put": {
         "operationId": "UserService_UpdateService",
         "responses": {
@@ -257,7 +316,7 @@
     "protoAddRecipeRequest": {
       "type": "object",
       "properties": {
-        "golang": {
+        "recipe": {
           "$ref": "#/definitions/protoRecipe"
         }
       }
@@ -274,7 +333,7 @@
     "protoGetIngredientsForAllRecipesRequest": {
       "type": "object",
       "properties": {
-        "golang": {
+        "recipe": {
           "$ref": "#/definitions/protoRecipe"
         }
       }
@@ -318,7 +377,7 @@
     "protoListAllRecipesResponse": {
       "type": "object",
       "properties": {
-        "golang": {
+        "recipe": {
           "$ref": "#/definitions/protoRecipe"
         }
       }
@@ -326,10 +385,21 @@
     "protoListAllRecipesResponseArray": {
       "type": "object",
       "properties": {
-        "golang": {
+        "recipe": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/protoRecipe"
+          }
+        }
+      }
+    },
+    "protoListAllUserResponse": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protoUser"
           }
         }
       }
@@ -364,6 +434,18 @@
         },
         "address": {
           "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deleted_at": {
+          "type": "string",
+          "format": "date-time"
         },
         "update_mask": {
           "$ref": "#/definitions/protobufFieldMask"
