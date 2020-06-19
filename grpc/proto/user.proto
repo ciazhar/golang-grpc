@@ -4,6 +4,7 @@ package proto;
 
 import "google/api/annotations.proto";
 import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "generated/golang";
 
@@ -14,11 +15,32 @@ message User {
   string email = 3;
   string password = 4;
   string address = 5;
-  google.protobuf.FieldMask update_mask = 6; // This field will be automatically populated by grpc-gateway.
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+  google.protobuf.Timestamp deleted_at = 8;
+  google.protobuf.FieldMask update_mask = 9; // This field will be automatically populated by grpc-gateway.
+}
+
+message ListAllUserRequest {}
+message ListAllUserResponse {
+  repeated User user = 1;
 }
 
 service UserService {
-  rpc UpdateService (User) returns (User) {
+  rpc AddUser (User) returns (User) {
+    option (google.api.http) = {
+      post: "/v1/user"
+      body: "*"
+    };
+  }
+
+  rpc ListAllUser (ListAllUserRequest) returns (stream ListAllUserResponse) {
+    option (google.api.http) = {
+      get: "/v1/user"
+    };
+  }
+
+  rpc UpdateUser (User) returns (User) {
     // Update maps to HTTP Patch.
     option (google.api.http) = {
       put: "/v1/user"
