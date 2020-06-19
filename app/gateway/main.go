@@ -22,8 +22,11 @@ var (
 func newGateway(ctx context.Context, opts ...runtime.ServeMuxOption) (http.Handler, error) {
 	mux := runtime.NewServeMux(opts...)
 	dialOpts := []grpc.DialOption{grpc.WithInsecure()}
-	err := golang.RegisterRecipesServiceHandlerFromEndpoint(ctx, mux, *serverEndpoint, dialOpts)
-	if err != nil {
+
+	if err := golang.RegisterRecipesServiceHandlerFromEndpoint(ctx, mux, *serverEndpoint, dialOpts); err != nil {
+		return nil, err
+	}
+	if err := golang.RegisterUserServiceHandlerFromEndpoint(ctx, mux, *serverEndpoint, dialOpts); err != nil {
 		return nil, err
 	}
 
