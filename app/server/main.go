@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/ciazhar/golang-grpc/app/server/app"
 	"github.com/ciazhar/golang-grpc/app/server/pkg/recipe"
+	"github.com/ciazhar/golang-grpc/app/server/pkg/user"
 	"github.com/rs/zerolog/log"
 	"google.golang.org/grpc"
 	"net"
@@ -34,6 +35,7 @@ func InitGRPC(application *app.Application) error {
 
 	//init client
 	recipe.InitGRPC(s)
+	user.InitGRPC(s, application)
 
 	//serve grpc server
 	log.Info().Caller().Msg("Running GRPC in port : " + address)
